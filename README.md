@@ -26,7 +26,7 @@ Every feature below exists because a finding from our primary research broke an 
 
 ### What the public competitors do not cover
 
-We cloned and read every public PS 5b repository we could find on 20 Nov 2026 ([docs/COMPETITOR_SCAN.md](docs/COMPETITOR_SCAN.md)). Three build onboarding. The one exit flow we found reuses onboarding skills and encodes only the 30 day gratuity clock. None handles state rules, the 2 working day wages clock, team owned or shared access, MFA seeds, proof after revocation, or the SOC.
+We cloned and read every public PS 5b repository we could find on 20 Nov 2026 ([docs/COMPETITOR_SCAN.md](docs/COMPETITOR_SCAN.md)). All four centre on onboarding. The only exit flow among them reuses onboarding skills and encodes only the 30 day gratuity clock. None handles state rules, the 2 working day wages clock, team owned or shared access, MFA seeds, proof after revocation, or the SOC.
 
 ---
 
