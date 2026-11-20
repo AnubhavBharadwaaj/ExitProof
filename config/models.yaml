@@ -1,0 +1,16 @@
+# Model routing. Provider is configuration, not code (brief: Avoid lock in).
+# Prices: Gemini 2.5 Flash-Lite $0.10 in / $0.40 out per 1M tokens
+#   https://developers.googleblog.com/gemini-25-flash-lite-is-now-stable-and-generally-available/
+# Larger model used only below the confidence threshold.
+usd_to_inr: 93.44            # 18 Nov 2026 close, https://telanganatoday.com/rupee-closes-higher-at-93-44-despite-strong-dollar-and-market-weakness
+default:
+  provider: google
+  model: gemini-2.5-flash-lite
+  usd_per_1m_input: 0.10
+  usd_per_1m_output: 0.40
+escalation:
+  provider: google
+  model: gemini-2.5-flash
+  usd_per_1m_input: 0.30
+  usd_per_1m_output: 2.50
+escalate_below_confidence: 0.8

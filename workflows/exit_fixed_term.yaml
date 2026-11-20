@@ -1,0 +1,7 @@
+# Extension example: a new exit variant added as ONE file, with no change to the engine.
+# Fixed term employees qualify for gratuity after 1 year (central rule pack, gratuity_eligibility.fixed_term_min_years).
+id: exit_fixed_term
+version: 1
+extends: exit
+params:
+  employment_type: fixed_term

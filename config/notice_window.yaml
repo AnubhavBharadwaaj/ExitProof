@@ -1,0 +1,9 @@
+# F7 Notice Window Policy. HR picks how far back the DLP review looks for a leaver.
+# Companies differ (whole notice, last month, last week), so this is a documented choice, not a constant.
+# Legal basis is recorded on every run: DPDP Act s.7(i), employment purposes and safeguarding the employer.
+version: 1
+lookback: last_month          # one of: whole_notice, last_month, last_week
+systems_in_scope: [work_email, work_laptop_dlp, work_cloud_storage]
+excluded: [personal_devices, personal_messaging]
+legal_basis: "DPDP Act 2023 s.7(i): employment purposes, safeguarding the employer from loss"
+log_retention_days: 365       # DPDP Rules 2025, Rule 6: keep logs for one year

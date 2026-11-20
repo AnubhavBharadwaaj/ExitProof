@@ -1,0 +1,16 @@
+# State rule pack. VALUES ARE ILLUSTRATIVE FOR THE DEMO; the named legal owner must verify them.
+id: state.karnataka
+state: karnataka
+version: 2026.11.1
+effective_from: 2025-11-21
+legal_owner: "Legal owner (to be named by TBO HR)"
+act: "Karnataka Shops and Commercial Establishments Act, 1961"
+leave_encashment:
+  leave_type: earned_leave
+  max_encashable_days: 30
+  wage_basis: basic_plus_da
+  divisor: 26
+holidays:
+  - 2026-12-25
+  - 2027-01-14
+  - 2027-01-26

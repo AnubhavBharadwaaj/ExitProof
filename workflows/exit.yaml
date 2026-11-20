@@ -1,0 +1,34 @@
+# Exit workflow. Each step names a skill from the registry; the engine never changes when this file does.
+# mode: auto  -> finishes with no human touch
+# mode: human -> a reserved decision or an attestation by a named person
+# feature tags map every step to the leak it closes (docs/EVIDENCE.md).
+id: exit
+version: 1
+trigger: email.resignation_received
+steps:
+  - {id: read_resignation,      skill: inbox.parse_resignation,     mode: auto,  feature: F5, llm: {in: 1500, out: 200}}
+  - {id: open_case,             skill: case.open,                   mode: auto,  feature: core}
+  - {id: accept_resignation,    skill: approval.request,            mode: human, reserved: resignation.accept}
+  - {id: agree_release_date,    skill: approval.request,            mode: human, reserved: exit.release_date_or_buyout}
+  - {id: compute_dates,         skill: rules.compute_exit_dates,    mode: auto,  feature: F1}
+  - {id: build_access_graph,    skill: access.build_graph,          mode: auto,  feature: F2}
+  - {id: soc_watch_event,       skill: soc.send_watch_event,        mode: auto,  feature: F6}
+  - {id: apply_notice_window,   skill: policy.notice_window,        mode: auto,  feature: F7}
+  - {id: order_laptop_return,   skill: inbox.send_work_order,       mode: auto,  feature: F5, team: it_desktop}
+  - {id: order_identity,        skill: inbox.send_work_order,       mode: auto,  feature: F5, team: identity_pam}
+  - {id: order_email,           skill: inbox.send_work_order,       mode: auto,  feature: F5, team: email}
+  - {id: order_physical,        skill: inbox.send_work_order,       mode: auto,  feature: F5, team: physical_security}
+  - {id: team_owned_attest,     skill: access.team_attestation,     mode: human, feature: F2}
+  - {id: rotate_shared_secrets, skill: secrets.rotate_shared,       mode: auto,  feature: F3}
+  - {id: cancel_benefit_cards,  skill: access.cancel_third_party,   mode: auto,  feature: F2}
+  - {id: revoke_ai_tokens,      skill: access.revoke_tokens,        mode: auto,  feature: F2}
+  - {id: close_work_orders,     skill: inbox.read_replies,          mode: auto,  feature: F5, llm: {in: 6400, out: 400}}
+  - {id: proof_day_1,           skill: proof.check_revocation,      mode: auto,  feature: F4, offset_days: 1}
+  - {id: proof_day_7,           skill: proof.check_revocation,      mode: auto,  feature: F4, offset_days: 7}
+  - {id: compute_wages,         skill: rules.compute_wages_clock,   mode: auto,  feature: F1}
+  - {id: compute_gratuity,      skill: rules.compute_gratuity_clock, mode: auto, feature: F1}
+  - {id: settlement_signoff,    skill: approval.request,            mode: human, reserved: payroll.settlement_signoff}
+  - {id: pay_wages,             skill: payroll.pay,                 mode: auto,  feature: F1, clock: wages}
+  - {id: pay_gratuity,          skill: payroll.pay,                 mode: auto,  feature: F1, clock: gratuity}
+  - {id: exit_conversation,     skill: chat.exit_conversation,      mode: auto,  feature: core, llm: {in: 6500, out: 1400}}
+  - {id: start_retention_clock, skill: dpdp.start_retention,        mode: auto,  feature: F7}

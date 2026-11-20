@@ -1,0 +1,3 @@
+# HR can pause any agent or workflow here (or through the API) with no code change.
+paused_workflows: []
+paused_skills: []

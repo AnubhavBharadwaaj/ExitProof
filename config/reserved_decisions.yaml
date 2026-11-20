@@ -1,0 +1,20 @@
+# Reserved decisions: an agent can never complete these. HR can add to this list (brief: Guardrails).
+# The minimum set from the PS 5b brief is locked: removing one fails validation.
+version: 3
+minimum_set_locked: true
+reserved:
+  - action: resignation.accept
+    approver_role: hr_head
+  - action: exit.release_date_or_buyout
+    approver_role: hr_head
+  - action: payroll.settlement_signoff
+    approver_role: finance_head
+  - action: complaint.posh
+    mode: route_only
+    route_to: internal_committee
+  - action: complaint.grievance
+    mode: route_only
+    route_to: grievance_officer
+  - action: complaint.whistleblower
+    mode: route_only
+    route_to: ethics_officer

@@ -1,0 +1,19 @@
+# State rule pack: decides HOW MUCH leave is owed on exit.
+# The Labour Code decides WHEN it is paid (rulepacks/central/labour_codes.yaml).
+# A multi state HR compliance consultant confirmed (Nov 2026): state rules prevail because state
+# labour offices inspect, and leave is defined by the state Shops and Establishments Act.
+# VALUES BELOW ARE ILLUSTRATIVE FOR THE DEMO. The named legal owner must verify them before use.
+id: state.maharashtra
+state: maharashtra
+version: 2026.11.1
+effective_from: 2025-11-21
+legal_owner: "Legal owner (to be named by TBO HR)"
+act: "Maharashtra Shops and Establishments (Regulation of Employment and Conditions of Service) Act, 2017"
+leave_encashment:
+  leave_type: earned_leave
+  max_encashable_days: 45
+  wage_basis: basic_plus_da
+  divisor: 26
+holidays:
+  - 2026-12-25
+  - 2027-01-26

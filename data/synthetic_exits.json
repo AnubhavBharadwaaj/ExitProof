@@ -1,0 +1,55 @@
+{
+  "_note": "Fictional employees for the demo. No real personal data.",
+  "employees": [
+    {
+      "id": "E10442", "name": "Rahul Demo", "pan": "ABCDE1234F", "bank_account": "001122334455",
+      "state": "maharashtra", "employment_type": "permanent", "join_date": "2019-06-03",
+      "monthly_basic_plus_da": 78000, "earned_leave_balance": 52, "days_worked_in_last_month": 20,
+      "resignation_email": "Hi team, I am resigning from my role. My last working day will be 28 Dec 2026. Thanks, Rahul",
+      "access": [
+        {"id": "sso",          "kind": "central",     "system": "Okta SSO",                  "owner_team": "identity_pam"},
+        {"id": "mail",         "kind": "central",     "system": "Exchange mailbox",          "owner_team": "email"},
+        {"id": "laptop",       "kind": "central",     "system": "Laptop LT-2231",            "owner_team": "it_desktop"},
+        {"id": "badge",        "kind": "central",     "system": "Access card",               "owner_team": "physical_security"},
+        {"id": "aws_key",      "kind": "team_owned",  "system": "Team AWS access key",       "owner_team": "platform_team"},
+        {"id": "ti_shared",    "kind": "shared_login","system": "Paid threat intel tool (team login)", "owner_team": "security_team", "mfa": "totp"},
+        {"id": "meal_card",    "kind": "third_party", "system": "Meal benefit card",         "owner_team": "admin"},
+        {"id": "gh_pat",       "kind": "ai_or_token", "system": "GitHub personal access token", "owner_team": "platform_team"},
+        {"id": "agent_bot",    "kind": "ai_or_token", "system": "Ticket triage AI agent he built", "owner_team": "platform_team"}
+      ],
+      "usage_log": [
+        {"item": "sso",       "last_used": "2026-12-28T17:40:00"},
+        {"item": "aws_key",   "last_used": "2026-12-30T02:15:00"},
+        {"item": "ti_shared", "last_used": "2026-12-28T11:00:00"},
+        {"item": "meal_card", "last_used": "2026-12-28T13:05:00"}
+      ],
+      "team_replies": {
+        "it_desktop": "Laptop LT-2231 received at the desk, wiped. Done.",
+        "identity_pam": "Okta account deactivated and PAM vault access removed. done",
+        "email": "Mailbox converted to shared, forwarding to manager. Done",
+        "physical_security": "Card not returned yet, will block it today"
+      },
+      "exit_conversation": "Overall fine. My manager made repeated comments about my appearance that made me uncomfortable."
+    },
+    {
+      "id": "E20517", "name": "Ananya Demo", "pan": "PQRSX6789K", "bank_account": "998877665544",
+      "state": "karnataka", "employment_type": "fixed_term", "join_date": "2025-08-01",
+      "monthly_basic_plus_da": 52000, "earned_leave_balance": 12, "days_worked_in_last_month": 18,
+      "resignation_email": "Hello, my fixed term contract ends and my last working day is 24 Dec 2026. Regards, Ananya",
+      "access": [
+        {"id": "sso",    "kind": "central", "system": "Okta SSO", "owner_team": "identity_pam"},
+        {"id": "mail",   "kind": "central", "system": "Exchange mailbox", "owner_team": "email"},
+        {"id": "laptop", "kind": "central", "system": "Laptop LT-4410", "owner_team": "it_desktop"},
+        {"id": "badge",  "kind": "central", "system": "Access card", "owner_team": "physical_security"}
+      ],
+      "usage_log": [{"item": "sso", "last_used": "2026-12-24T18:00:00"}],
+      "team_replies": {
+        "it_desktop": "Received and wiped, done",
+        "identity_pam": "Disabled. Done.",
+        "email": "done",
+        "physical_security": "Card returned and deactivated. Done"
+      },
+      "exit_conversation": "Good experience, thanks to the team."
+    }
+  ]
+}

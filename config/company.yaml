@@ -1,0 +1,4 @@
+# Company level settings HR can change without code.
+weekly_off: [saturday, sunday]
+default_state: maharashtra
+currency: INR

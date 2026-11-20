@@ -1,0 +1,14 @@
+[project]
+name = "exitproof"
+version = "0.1.0"
+description = "Agent first exits platform for TBO VoyageHack 4.0 PS 5b: pays on both legal clocks and proves every access is dead"
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0"]
+license = {text = "MIT"}
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
